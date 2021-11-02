@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarWorkshop.Models
 {
-    public class UserModel
+    public class User
     {
         [Key]
         public int Id { get; set; }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CarWorkshop.Models;
 
 namespace CarWorkshop.Data
 {
@@ -12,7 +13,7 @@ namespace CarWorkshop.Data
         {
 
         }
-        public DbSet MyProperty { get; set; }
+        public DbSet<User> Users { get; set; }
 
     }
 }
