@@ -13,7 +13,7 @@ namespace CarWorkshop.Data
         {
 
         }
-        public DbSet<User> Users { get; set; }
+        public DbSet<Client> Users { get; set; }
 
     }
 }

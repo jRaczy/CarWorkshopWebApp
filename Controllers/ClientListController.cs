@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace CarWorkshop.Controllers
 {
-    public class UserController : Controller
+    public class ClientListController : Controller
     {
         private readonly ApplicationDbContext _db;
-        public UserController(ApplicationDbContext db)
+        public ClientListController(ApplicationDbContext db)
         {
             _db = db;
         }
