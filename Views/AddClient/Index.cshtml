@@ -1,34 +1,42 @@
-﻿
+﻿@model CarWorkshop.Models.Client
 @{
     ViewData["Title"] = "Index";
 }
 
-<form class="row g-3">
+<form class="row g-3" method="post" asp-action="Create">
     <div class="col-12">
         <label for="inputName" class="form-label">Name</label>
-        <input type="text" class="form-control" id="inputName" placeholder="Name">
+        <input type="text" class="form-control" id="inputName" placeholder="Name" asp-for="FirstName">
     </div>
     <div class="col-12">
         <label for="inputSurname" class="form-label">Surname</label>
-        <input type="text" class="form-control" id="inputSurname" placeholder="Last name">
+        <input type="text" class="form-control" id="inputSurname" placeholder="Last name" asp-for="LastName">
     </div>
     <div class="col-md-12">
         <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="inputAddress">
+        <input type="text" class="form-control" id="inputAddress" asp-for="Address">
     </div>
     <div class="col-md-12">
         <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity">
+        <input type="text" class="form-control" id="inputCity" asp-for="CityName">
     </div>
     <div class="col-md-12">
-        <label for="inputZip" class="form-label">Zip</label>
-        <input type="number" class="form-control" id="inputZip">
+        <label for="inputZip" class="form-label">Post code</label>
+        <input type="number" class="form-control" id="inputZip" asp-for="PostCode">
+    </div>
+    <div class="col-md-12">
+        <label for="inputPhoneNumber" class="form-label">Phone number</label>
+        <input type="number" class="form-control" id="inputZip" asp-for="PhoneNumber">
+    </div>
+    <div class="col-md-12">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input type="number" class="form-control" id="inputZip" asp-for="Email">
     </div>
     <div class="col-md-2">
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary" value="create">Sign in</button>
     </div>
     <div class="col-md-2">
-        <button type="reset" class="btn btn-primary">Abandon</button>
+        <button asp-controller="ClientList" asp-action="Index" class="btn btn-primary">Cancel</button>
     </div>
 </form>
 

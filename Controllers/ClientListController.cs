@@ -20,5 +20,9 @@ namespace CarWorkshop.Controllers
             IEnumerable<Client> objList = _db.Users;
             return View(objList);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
