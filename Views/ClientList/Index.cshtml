@@ -15,16 +15,36 @@
                 <th>
                     Name
                 </th>
+                <th>
+                    Surname
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    Post code
+                </th>
+                <th>
+                    Phone number
+                </th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td width="30%">@item.Id</td>
-                    <td width="30%">@item.FirstName</td>
-                    <td width="10%"><button>Add car</button></td>
-                </tr>
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Email</td>
+                <td>@item.Address</td>
+                <td>@item.PostCode</td>
+                <td>@item.PhoneNumber</td>
+                <td><button>Add car</button></td>
+            </tr>
             }
         </tbody>
     </table>
