@@ -1,0 +1,44 @@
+﻿@model CarWorkshop.Models.Client
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form class="row g-3" method="post" asp-action="DeletePost">
+    <input asp-for="Id" hidden />
+    <div class="col-12">
+        <label for="inputName" class="form-label">Name</label>
+        <input type="text" class="form-control" id="inputName"disabled placeholder="Name" asp-for="FirstName">
+    </div>
+    <div class="col-12">
+        <label for="inputSurname" class="form-label">Surname</label>
+        <input type="text" class="form-control" id="inputSurname" disabled placeholder="Last name" asp-for="LastName">
+    </div>
+    <div class="col-md-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input type="text" class="form-control" id="inputAddress"disabled placeholder="Address" asp-for="Address">
+    </div>
+    <div class="col-md-12">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity"disabled placeholder="City" asp-for="CityName">
+    </div>
+    <div class="col-md-12">
+        <label for="inputZip" class="form-label">Post code</label>
+        <input type="number" class="form-control" id="inputZip"disabled placeholder="Post code" asp-for="PostCode">
+    </div>
+    <div class="col-md-12">
+        <label for="inputPhoneNumber" class="form-label">Phone number</label>
+        <input type="number" class="form-control" id="inputZip"disabled placeholder="Phone number 504361020" asp-for="PhoneNumber">
+    </div>
+    <div class="col-md-12">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input type="text" class="form-control" id="inputZip"disabled placeholder="Email test@gmail.com" asp-for="Email">
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-danger" value="Delete">Delete</button>
+    </div>
+    <div class="col-md-2">
+        <button asp-controller="ClientList" asp-action="Index" class="btn btn-primary">Cancel</button>
+    </div>
+</form>
+
+
