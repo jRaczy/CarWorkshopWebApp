@@ -17,7 +17,7 @@ namespace CarWorkshop.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Client> objList = _db.Users;
+            IEnumerable<Client> objList = _db.Client;
             return View(objList);
         }
         public IActionResult Create()
@@ -30,7 +30,7 @@ namespace CarWorkshop.Controllers
             {
                 return NotFound();
             }
-            var obj = _db.Users.Find(id);
+            var obj = _db.Client.Find(id);
             if (obj == null)
             {
                 return NotFound();
@@ -40,12 +40,12 @@ namespace CarWorkshop.Controllers
         [HttpPost]
         public IActionResult DeletePost(int? id)
         {
-            var obj = _db.Users.Find(id);
+            var obj = _db.Client.Find(id);
             if (obj == null)
             {
                 return NotFound();
             }
-            _db.Users.Remove(obj);
+            _db.Client.Remove(obj);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -55,7 +55,7 @@ namespace CarWorkshop.Controllers
             {
                 return NotFound();
             }
-            var obj = _db.Users.Find(id);
+            var obj = _db.Client.Find(id);
             if (obj == null)
             {
                 return NotFound();
@@ -67,7 +67,7 @@ namespace CarWorkshop.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Update(Client obj)
         {
-            _db.Users.Update(obj);
+            _db.Client.Update(obj);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
