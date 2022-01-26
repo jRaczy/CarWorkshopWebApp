@@ -21,5 +21,52 @@ namespace CarWorkshop.Controllers
             IEnumerable<Car> objList = _db.Car.Where(x => x.Client ==client);
             return View(objList);
         }
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.Car.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+        [HttpPost]
+        public IActionResult DeletePost(int? id)
+        {
+            var obj = _db.Car.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            _db.Car.Remove(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index", "ClientList");
+        }
+        public IActionResult Update(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.Car.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+        //POST UPDATE
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Update(Car obj)
+        {
+            _db.Car.Update(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index", "ClientList");
+        }
     }
 }

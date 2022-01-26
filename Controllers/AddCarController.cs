@@ -13,7 +13,6 @@ namespace CarWorkshop.Controllers
 {
     public class AddCarController : Controller
     {
-        int clientId;
             private readonly ApplicationDbContext _db;
             public AddCarController(ApplicationDbContext db)
             {
