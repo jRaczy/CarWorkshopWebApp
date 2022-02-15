@@ -18,5 +18,7 @@ namespace CarWorkshop.Models
         public string PostCode { get; set; }
         public string PhoneNumber { get; set; }
         public string CityName { get; set; }
+
+        public List<Car> Cars { get; set; }
     }
 }

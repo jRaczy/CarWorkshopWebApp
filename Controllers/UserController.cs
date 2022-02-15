@@ -17,7 +17,7 @@ namespace CarWorkshop.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Client> objList = _db.Users;
+            IEnumerable<Client> objList = _db.Client;
             return View(objList);
         }
     }

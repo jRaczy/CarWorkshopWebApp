@@ -58,7 +58,8 @@
                         <div class="w-100 btn-group" role="group">
                             <a asp-controller="ClientList" asp-action="Update" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Update</a>
                             <a asp-controller="ClientList" asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger mx-1">Delete</a>
-                            <a asp-controller="ClientList" asp-action="AddCar" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Add car</a>
+                            <a asp-controller="AddCar" asp-action="Create" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Add car</a>
+                            <a asp-controller="CarList" asp-action="Index" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Car list</a>
                         </div>
                     </td>
                 </tr>

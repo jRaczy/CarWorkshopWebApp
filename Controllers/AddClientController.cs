@@ -28,7 +28,7 @@ namespace CarWorkshop.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Client obj)
         {
-            _db.Users.Add(obj);
+            _db.Client.Add(obj);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
