@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CarWorkshop.Models.Car>
+﻿@model IEnumerable<CarWorkshop.Models.Appointment>
 
 @{
     ViewData["Title"] = "Index";
@@ -6,7 +6,7 @@
 <div class=" container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">List of client cars</h2>
+            <h2 class="text-primary">List of repairs of a given car</h2>
         </div>
     </div>
     <br />
@@ -20,19 +20,13 @@
                         Id
                     </th>
                     <th>
-                        Mark
+                        Date of repair
                     </th>
                     <th>
-                        Model
+                        Cost
                     </th>
                     <th>
-                        Year of production
-                    </th>
-                    <th>
-                        VIN
-                    </th>
-                    <th>
-                        Plate Number
+                        Status
                     </th>
                 </tr>
             </thead>
@@ -41,15 +35,14 @@
                 {
                     <tr>
                         <td>@item.Id</td>
-                        <td>@item.Mark</td>
-                        <td>@item.Model</td>
-                        <td>@item.YearOfProduction</td>
-                        <td>@item.VIN</td>
-                        <td>@item.PlateNumber</td>
+                        <td>@item.EndDate +" - "+ @item.StartDate</td>
+                        <td>@item.Diagnosis</td>
+                        <td>@item.Cost</td>
+                        <td>@item.Status</td>
                         <td>
                             <div class="w-100 btn-group" role="group">
-                                <a asp-controller="CarList" asp-action="Update" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Update</a>
-                                <a asp-controller="CarList" asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger mx-1">Delete</a>
+                                <a asp-controller="Repair" asp-action="Update" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Update</a>
+                                <a asp-controller="Repair" asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger mx-1">Delete</a>
                                 <a asp-controller="Repair" asp-action="Create" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Add repair</a>
                                 <a asp-controller="Repair" asp-action="Index" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Show history</a>
                             </div>

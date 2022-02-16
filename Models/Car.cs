@@ -19,5 +19,6 @@ namespace CarWorkshop.Models
         public int ClientId { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public virtual Client Client { get; set; }
+        public List<Appointment> Appointment { get; set; }
     }
 }
