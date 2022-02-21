@@ -44,10 +44,63 @@ namespace CarWorkshop.Controllers
 
         {
             var car = _db.Car.Include(x => x.Appointment).FirstOrDefault(x => x.Id == obj.Appointment.CarId);
-            //obj.Car.Client = client;
+            obj.Appointment.Status = "Open";
+            obj.Appointment.Cost = 0;
             _db.Appointment.Add(obj.Appointment);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index",new { id = obj.Appointment.CarId });
+        }
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.Appointment.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+        [HttpPost]
+        public IActionResult DeletePost(int? id)
+        {
+            var obj = _db.Appointment.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            _db.Appointment.Remove(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index", "ClientList");
+        }
+        public IActionResult Update(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.Appointment.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+        //POST UPDATE
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Update(Appointment obj)
+        {
+            _db.Appointment.Update(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index", "ClientList");
+        }
+        public IActionResult OpenRepair()
+        {
+            IEnumerable<Appointment> objList = _db.Appointment.Where(x => x.Status == "Open");
+            return View(objList);
         }
     }
 }

@@ -1,37 +1,40 @@
-﻿@model CarWorkshop.Models.ViewModels.AppointmentVM
-
-<form class="row g-3" method="post" asp-action="Create">
+﻿@model CarWorkshop.Models.Appointment
+@{
+    ViewData["Title"] = "Update";
+}
+<form class="row g-3" method="post" asp-action="Update">
+    <input asp-for="Id" hidden />
     <div class="col-md-12">
         <label for="inputZip" class="form-label">Car Id</label>
         @*<input type="number" class="form-control" id="inputClientId" placeholder="Number VIN" asp-for="Car.Client.Id">*@
-        <input type="number" class="form-control" asp-for="Appointment.CarId">
+        <input type="number" class="form-control" asp-for="CarId">
     </div>
     <div class="col-12">
         <div class="col-md-12">
             <label for="inputZip" class="form-label">Start date</label>
-            <input type="datetime" class="form-control" id="inputZip" placeholder="Number VIN" asp-for="Appointment.StartDate">
+            <input type="datetime" class="form-control" id="inputZip" placeholder="Number VIN" asp-for="StartDate">
         </div>
         <label for="inputName" class="form-label">End Date</label>
-        <input type="datetime" class="form-control" id="inputName" placeholder="Mark of car" asp-for="Appointment.EndDate">
+        <input type="datetime" class="form-control" id="inputName" placeholder="Mark of car" asp-for="EndDate">
     </div>
     <div class="col-12">
         <label for="inputSurname" class="form-label">Description of problem</label>
-        <input type="text" class="form-control" placeholder="Description" asp-for="Appointment.Description">
+        <input type="text" class="form-control" placeholder="Description" asp-for="Description">
     </div>
     <div class="col-md-12">
         <label for="inputCity" class="form-label">Diagnosis</label>
-        <input type="text" class="form-control" placeholder="Diagnosis what cause a problem" asp-for="Appointment.Diagnosis">
+        <input type="text" class="form-control" placeholder="Diagnosis what cause a problem" asp-for="Diagnosis">
     </div>
     <div class="col-md-12">
         <label for="inputZip" class="form-label">Parts and things needed to repair car</label>
-        <input type="text" class="form-control" id="inputZip" placeholder="Parts" asp-for="Appointment.Parts">
+        <input type="text" class="form-control" id="inputZip" placeholder="Parts" asp-for="Parts">
     </div>
     <div class="col-md-12">
         <label for="inputZip" class="form-label">Total cost</label>
-        <input type="text" class="form-control" id="inputZip" placeholder="Total cost included parts and repair cost" asp-for="Appointment.Cost">
+        <input type="text" class="form-control" id="inputZip" placeholder="Total cost included parts and repair cost" asp-for="Cost">
     </div>
     <div class="col-md-2">
-        <button type="submit" class="btn btn-primary" value="Create">Create</button>
+        <button type="submit" class="btn btn-primary" value="Update">Update</button>
     </div>
     <div class="col-md-2">
         <button asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</button>
