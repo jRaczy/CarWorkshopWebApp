@@ -55,7 +55,7 @@ namespace CarWorkshop.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> RegisterAsync(RegistrationVM model)
+        public async Task<IActionResult> Register(RegistrationVM model)
         {
             if(ModelState.IsValid)
             {
@@ -69,7 +69,7 @@ namespace CarWorkshop.Controllers
                 if(result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Login", "Account");
                 }
                 foreach (var error in result.Errors)
                 {

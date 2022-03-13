@@ -3,14 +3,9 @@
 <form class="row g-3" method="post" asp-action="Create">
     <div class="col-md-12">
         <label for="inputZip" class="form-label">Client Id</label>
-        @*<input type="number" class="form-control" id="inputClientId" placeholder="Number VIN" asp-for="Car.Client.Id">*@
-        <input type="number" class="form-control" id="inputClientId" placeholder="Number VIN" asp-for="Car.ClientId">
+        <input type="number" class="form-control" id="inputClientId" asp-for="Car.ClientId" readonly>
     </div>
     <div class="col-12">
-        <div class="col-md-12">
-            <label for="inputZip" class="form-label">VIN</label>
-            <input type="number" class="form-control" id="inputZip" placeholder="Number VIN" asp-for="Car.VIN">
-        </div>
         <label for="inputName" class="form-label">Mark</label>
         <input type="text" class="form-control" id="inputName" placeholder="Mark of car" asp-for="Car.Mark">
     </div>
@@ -30,10 +25,11 @@
         <label for="inputZip" class="form-label">VIN</label>
         <input type="number" class="form-control" id="inputZip" placeholder="Number VIN" asp-for="Car.VIN">
     </div>
-    <div class="col-md-2">
+    <br />
+    <div class="mt-2 col-md-2">
         <button type="submit" class="btn btn-primary" value="Create">Create</button>
     </div>
-    <div class="col-md-2">
+    <div class="mt-2 col-md-2">
         <button asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</button>
     </div>
 </form>

@@ -6,8 +6,11 @@
     <input asp-for="Id" hidden />
     <div class="col-md-12">
         <label for="inputZip" class="form-label">Car Id</label>
-        @*<input type="number" class="form-control" id="inputClientId" placeholder="Number VIN" asp-for="Car.Client.Id">*@
-        <input type="number" class="form-control" asp-for="CarId">
+        <input type="number" class="form-control" asp-for="CarId" readonly>
+    </div>
+    <div class="col-md-12">
+        <label for="inputZip" class="form-label">Status of the repair</label>
+        <input type="text" class="form-control" id="inputZip" placeholder="Total cost included parts and repair cost" asp-for="Status" readonly>
     </div>
     <div class="col-12">
         <div class="col-md-12">

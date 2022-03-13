@@ -1,0 +1,26 @@
+﻿@model CarWorkshop.Models.EmailSend
+@{
+    ViewData["Title"] = "Index";
+}
+<form class="row g-3" method="post" asp-action="SendEmail">
+    <div class="col-12">
+        <label for="inputName" class="form-label">Address email</label>
+        <input type="text" class="form-control" id="inputName" placeholder="Address email" asp-for="EmailTo">
+    </div>
+    <div class="col-12">
+        <label for="inputSurname" class="form-label">Subject</label>
+        <input type="text" class="form-control" id="inputSurname" placeholder="Subject" asp-for="Subject">
+    </div>
+    <div class="col-md-12">
+        <label for="inputAddress" class="form-label">Message</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Message" asp-for="Message">
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary" value="create">Send</button>
+    </div>
+    <div class="col-md-2">
+        <button asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</button>
+    </div>
+</form>
+
+

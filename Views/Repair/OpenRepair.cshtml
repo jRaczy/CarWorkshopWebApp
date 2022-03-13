@@ -35,15 +35,19 @@
                 {
                     <tr>
                         <td>@item.Id</td>
-                        <td>@item.EndDate +" - "+ @item.StartDate</td>
+                        <td>@item.EndDate" - "@item.StartDate</td>
                         <td>@item.Description</td>
                         <td>@item.Status</td>
                         <td>
                             <div class="w-100 btn-group" role="group">
                                 <a asp-controller="Repair" asp-action="Update" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Update</a>
                                 <a asp-controller="Repair" asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger mx-1">Delete</a>
-                                <a asp-controller="Repair" asp-action="Index" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Show history</a>
-                                <a asp-controller="Repair" asp-action="StatusChange" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Close appointment</a>
+                                @if (item.Status == "Closed") { 
+                                <a asp-controller="Repair" asp-action="CloseAppointment" asp-route-Id="@item.Id" class="btn btn-primary mx-1" disabled="disabled">Close appointment</a>
+                                }
+                                else{
+                                <a asp-controller="Repair" asp-action="CloseAppointment" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Close appointment</a>
+                                }
                             </div>
                         </td>
                     </tr>

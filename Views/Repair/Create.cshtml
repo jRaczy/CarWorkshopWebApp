@@ -3,16 +3,15 @@
 <form class="row g-3" method="post" asp-action="Create">
     <div class="col-md-12">
         <label for="inputZip" class="form-label">Car Id</label>
-        @*<input type="number" class="form-control" id="inputClientId" placeholder="Number VIN" asp-for="Car.Client.Id">*@
-        <input type="number" class="form-control" asp-for="Appointment.CarId">
+        <input type="number" class="form-control" asp-for="Appointment.CarId" readonly>
     </div>
     <div class="col-12">
-        <div class="col-md-12">
-            <label for="inputZip" class="form-label">Start date</label>
-            <input type="datetime" class="form-control" id="inputZip" placeholder="Number VIN" asp-for="Appointment.StartDate">
-        </div>
-        <label for="inputName" class="form-label">End Date</label>
-        <input type="datetime" class="form-control" id="inputName" placeholder="Mark of car" asp-for="Appointment.EndDate">
+        <label for="inputZip" class="form-label">Start date</label>
+        <input type="datetime" class="form-control" id="inputZip" placeholder="25-12-2022" asp-for="Appointment.StartDate">
+     </div>
+    <div class="col-12">
+            <label for="inputName" class="form-label">End Date</label>
+            <input type="datetime" class="form-control" id="inputName" placeholder="30-12-2022" asp-for="Appointment.EndDate">
     </div>
     <div class="col-12">
         <label for="inputSurname" class="form-label">Description of problem</label>

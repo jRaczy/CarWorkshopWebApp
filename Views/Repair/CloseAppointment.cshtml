@@ -1,0 +1,18 @@
+﻿@model CarWorkshop.Models.Appointment
+
+@{
+    ViewData["Title"] = "Index";
+}
+    <form class="row g-3" method="post" asp-action="CloseAppointment">
+        <input asp-for="Id" hidden />
+        <div class="col-6">
+            <h2 class="text-primary">Do you want to change the status status to Closed and send the email with summary to the client</h2>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary" value="Chagne status and send">CloseAppointment</button>
+        </div>
+        <div class="col-md-2">
+            <button asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</button>
+        </div>
+    </form>
+
